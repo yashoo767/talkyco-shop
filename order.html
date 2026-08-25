@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmation — TalkyCo Shop</title>
+  <meta name="description" content="Your TalkyCo order has been placed. View your order confirmation and details." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="announcement-bar">Thank you for your order! &mdash; <a href="products.html">Continue Shopping</a></div>
+<header class="site-header"><div class="container"><div class="header-inner">
+  <a href="index.html" class="logo"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#1E40AF"/><path d="M10 18h16M18 10v16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>Talky<span class="logo-accent">Co</span></a>
+  <nav class="main-nav"><a href="index.html" class="nav-link">Home</a><a href="products.html" class="nav-link">Shop</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a></nav>
+  <div class="header-actions"><a href="account.html" class="btn btn-ghost btn-sm">Account</a><a href="cart.html" class="cart-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>Cart <span class="cart-count" style="display:none">0</span></a></div>
+</div></div></header>
+
+<main>
+  <section class="section" style="background:var(--bg-light); min-height:60vh;">
+    <div class="container" style="max-width:680px;">
+
+      <div style="text-align:center; padding:48px 0 32px;">
+        <div style="width:80px; height:80px; border-radius:50%; background:var(--secondary-bg); display:flex; align-items:center; justify-content:center; font-size:2.5rem; margin:0 auto 20px;">✓</div>
+        <h1 style="color:var(--secondary-dark); margin-bottom:8px;">Order Confirmed!</h1>
+        <p style="font-size:1.05rem; color:var(--text-medium);">Thank you for your order. We've sent a confirmation to your email.</p>
+      </div>
+
+      <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px; margin-bottom:24px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);">
+          <div>
+            <div style="font-size:.82rem; color:var(--text-light); margin-bottom:2px;">Order Number</div>
+            <div style="font-size:1.1rem; font-weight:700; color:var(--primary);" id="order-number">TC-000000</div>
+          </div>
+          <div>
+            <div style="font-size:.82rem; color:var(--text-light); margin-bottom:2px;">Order Date</div>
+            <div style="font-weight:600;" id="order-date">—</div>
+          </div>
+          <div>
+            <span class="order-badge delivered">Order Placed</span>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom:16px;">What Happens Next</h3>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--secondary); color:#fff; display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:700; flex-shrink:0;">1</div>
+            <div><strong>Order Confirmation Email</strong><br><span style="font-size:.88rem; color:var(--text-light);">You'll receive an email confirmation with your order details shortly.</span></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--primary-bg); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:700; flex-shrink:0;">2</div>
+            <div><strong>Processing &amp; Packing</strong><br><span style="font-size:.88rem; color:var(--text-light);">Orders placed before 2 PM ET are typically processed the same day.</span></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--primary-bg); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:700; flex-shrink:0;">3</div>
+            <div><strong>Shipping Confirmation</strong><br><span style="font-size:.88rem; color:var(--text-light);">Once shipped, you'll receive a tracking number via email. Standard delivery: 5–7 business days.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; margin-bottom:24px;">
+        <h3 style="margin-bottom:12px;">Product Reminder</h3>
+        <p style="font-size:.88rem; color:var(--text-medium);">Please read all product labels, directions, and warnings before using any product. If you have any medical concerns or questions about your OTC products, consult a healthcare professional. See our <a href="disclaimer.html" style="color:var(--primary);">Product Disclaimer</a>.</p>
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+        <a href="account.html" class="btn btn-outline">View My Orders</a>
+        <a href="contact.html" class="btn btn-ghost">Need Help?</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#3B82F6"/><path d="M10 18h16M18 10v16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>TalkyCo</a><p>Quality OTC healthcare products.</p><div class="footer-sms-notice">SMS Program: Up to 4 msg/month. Reply STOP to opt out. <a href="sms-terms.html">SMS Terms</a> | <a href="privacy-policy.html">Privacy</a></div></div><div class="footer-col"><h5>Shop</h5><ul class="footer-links"><li><a href="products.html">All Products</a></li><li><a href="products.html?cat=pain-relief">Pain Relief</a></li><li><a href="products.html?cat=vitamins">Vitamins</a></li></ul></div><div class="footer-col"><h5>Help</h5><ul class="footer-links"><li><a href="faq.html">FAQ</a></li><li><a href="shipping.html">Shipping</a></li><li><a href="returns.html">Returns</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h5>Legal</h5><ul class="footer-links"><li><a href="terms.html">Terms</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="sms-terms.html">SMS</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2025 TalkyCo LLC. All rights reserved.</p></div></div></footer>
+<script src="js/main.js"></script>
+<script>
+  // Generate order number and date
+  const orderNum = 'TC-' + Math.floor(100000 + Math.random() * 900000);
+  document.getElementById('order-number').textContent = orderNum;
+  document.getElementById('order-date').textContent = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+  // Clear cart on confirmation
+  localStorage.removeItem('talkyco_cart');
+  updateCartBadge();
+</script>
+</body>
+</html>

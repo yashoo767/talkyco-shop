@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — TalkyCo Shop</title>
+  <meta name="description" content="Secure checkout for your TalkyCo OTC healthcare order." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="announcement-bar">Secure Checkout — SSL Encrypted &mdash; 🔒</div>
+<header class="site-header"><div class="container"><div class="header-inner">
+  <a href="index.html" class="logo"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#1E40AF"/><path d="M10 18h16M18 10v16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>Talky<span class="logo-accent">Co</span></a>
+  <div style="font-size:.85rem; color:var(--text-light);">Secure Checkout</div>
+  <a href="cart.html" style="font-size:.88rem; color:var(--primary);">← Back to Cart</a>
+</div></div></header>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span><a href="cart.html">Cart</a><span class="breadcrumb-sep">/</span><span>Checkout</span></nav>
+    <h1>Checkout</h1>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- Progress Steps -->
+    <div class="checkout-steps">
+      <div class="step active"><div class="step-num">1</div><div class="step-label">Information</div></div>
+      <div class="step-divider"></div>
+      <div class="step"><div class="step-num">2</div><div class="step-label">Shipping</div></div>
+      <div class="step-divider"></div>
+      <div class="step"><div class="step-num">3</div><div class="step-label">Payment</div></div>
+    </div>
+
+    <div class="checkout-layout">
+      <!-- Form -->
+      <form id="checkout-form" novalidate>
+
+        <!-- Contact -->
+        <div class="checkout-section">
+          <h3>Contact Information</h3>
+          <div class="form-row">
+            <div class="form-group"><label for="billing-first">First Name *</label><input type="text" id="billing-first" name="first_name" required autocomplete="given-name" /></div>
+            <div class="form-group"><label for="billing-last">Last Name *</label><input type="text" id="billing-last" name="last_name" required autocomplete="family-name" /></div>
+          </div>
+          <div class="form-group"><label for="billing-email">Email Address *</label><input type="email" id="billing-email" name="email" required autocomplete="email" /></div>
+          <div class="form-group">
+            <label for="billing-phone">Phone Number</label>
+            <input type="tel" id="billing-phone" name="phone" autocomplete="tel" placeholder="(Optional) Used for order updates" />
+            <div class="helper">Optional. Used only for order-related communications unless you opt in to SMS below.</div>
+          </div>
+        </div>
+
+        <!-- Shipping Address -->
+        <div class="checkout-section">
+          <h3>Shipping Address</h3>
+          <div class="form-group"><label for="ship-address">Street Address *</label><input type="text" id="ship-address" name="address" required autocomplete="street-address" /></div>
+          <div class="form-group"><label for="ship-address2">Apartment, Suite, Unit</label><input type="text" id="ship-address2" name="address2" autocomplete="address-line2" /></div>
+          <div class="form-row">
+            <div class="form-group"><label for="ship-city">City *</label><input type="text" id="ship-city" name="city" required autocomplete="address-level2" /></div>
+            <div class="form-group"><label for="ship-state">State *</label><select id="ship-state" name="state" required autocomplete="address-level1"><option value="">Select state...</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select></div>
+          </div>
+          <div class="form-group"><label for="ship-zip">ZIP Code *</label><input type="text" id="ship-zip" name="zip" required autocomplete="postal-code" maxlength="10" /></div>
+        </div>
+
+        <!-- Shipping Method -->
+        <div class="checkout-section">
+          <h3>Shipping Method</h3>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <label style="display:flex; align-items:center; justify-content:space-between; padding:14px; border:2px solid var(--primary); border-radius:var(--radius-sm); cursor:pointer; background:var(--primary-bg);">
+              <div style="display:flex; align-items:center; gap:10px;"><input type="radio" name="shipping_method" value="standard" checked /> <span style="font-size:.9rem;"><strong>Standard Shipping</strong> — 5–7 business days</span></div>
+              <span style="font-weight:700; color:var(--secondary);">FREE (orders $35+) / $5.99</span>
+            </label>
+            <label style="display:flex; align-items:center; justify-content:space-between; padding:14px; border:1px solid var(--border); border-radius:var(--radius-sm); cursor:pointer;">
+              <div style="display:flex; align-items:center; gap:10px;"><input type="radio" name="shipping_method" value="expedited" /> <span style="font-size:.9rem;"><strong>Expedited Shipping</strong> — 2–3 business days</span></div>
+              <span style="font-weight:700;">$12.99</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="checkout-section">
+          <h3>Payment Information</h3>
+          <div class="form-group"><label for="card-number">Card Number *</label><input type="text" id="card-number" name="card_number" placeholder="1234 5678 9012 3456" required autocomplete="cc-number" maxlength="19" /></div>
+          <div class="form-row">
+            <div class="form-group"><label for="card-expiry">Expiry *</label><input type="text" id="card-expiry" name="card_expiry" placeholder="MM / YY" required autocomplete="cc-exp" maxlength="7" /></div>
+            <div class="form-group"><label for="card-cvv">CVV *</label><input type="text" id="card-cvv" name="card_cvv" placeholder="123" required autocomplete="cc-csc" maxlength="4" /></div>
+          </div>
+          <div class="form-group"><label for="card-name">Name on Card *</label><input type="text" id="card-name" name="card_name" required autocomplete="cc-name" /></div>
+        </div>
+
+        <!-- Consent Section -->
+        <div class="checkout-section">
+          <h3>Agreements &amp; Consent</h3>
+
+          <!-- Mandatory: Terms acceptance -->
+          <div class="checkout-mandatory-consent">
+            <label class="checkbox-label" style="align-items:flex-start;">
+              <input type="checkbox" id="terms-consent" name="terms_consent" style="margin-top:3px; flex-shrink:0;" required />
+              <span style="font-size:.85rem; color:var(--text-dark); margin-left:10px;">
+                * I agree to the TalkyCo Shop <a href="terms.html" target="_blank" style="color:var(--primary);">Terms &amp; Conditions</a> and <a href="privacy-policy.html" target="_blank" style="color:var(--primary);">Privacy Policy</a>. <strong>(Required)</strong>
+              </span>
+            </label>
+          </div>
+
+          <!-- Optional: SMS consent — separate, independently optional -->
+          <div style="margin-top:14px; padding:4px 0 8px;">
+            <div style="font-size:.8rem; font-weight:700; text-transform:uppercase; color:var(--text-light); letter-spacing:.06em; margin-bottom:10px;">Optional: SMS Marketing</div>
+            <div class="checkout-sms-consent">
+              <label class="checkbox-label">
+                <input type="checkbox" id="sms-consent" name="sms_consent" style="margin-top:3px; flex-shrink:0;" />
+                <span class="checkbox-text">
+                  Yes, I would like to receive recurring marketing text messages from TalkyCo about eligible OTC products, promotions, discounts, special offers, new products, and product availability. (Optional — not required to complete purchase.)
+                </span>
+              </label>
+              <div style="font-size:.75rem; color:var(--text-light); margin-top:10px; padding-top:10px; border-top:1px solid var(--border);">
+                Message frequency: Up to 4 messages/month. Message &amp; data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
+                <a href="sms-terms.html" style="color:var(--primary);">SMS Terms</a> | <a href="privacy-policy.html" style="color:var(--primary);">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:20px;">
+            🔒 Place Order
+          </button>
+
+          <div class="secure-badges" style="margin-top:12px;">
+            <span>🔒 SSL Encrypted</span>
+            <span>💳 PCI Compliant</span>
+            <span>↩ 30-Day Returns</span>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Order Summary -->
+      <div class="checkout-summary">
+        <div class="checkout-order-card">
+          <h3 style="margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border);">Your Order</h3>
+          <div id="checkout-order-items">
+            <!-- Populated by JS -->
+          </div>
+          <hr class="divider" />
+          <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">—</span></div>
+          <div class="summary-row"><span>Shipping</span><span id="summary-shipping">—</span></div>
+          <div class="summary-row"><span>Estimated Tax</span><span id="summary-tax">—</span></div>
+          <div class="summary-row total"><span>Total</span><span id="summary-total">—</span></div>
+        </div>
+
+        <div style="padding:14px; background:var(--bg-light); border:1px solid var(--border); border-radius:var(--radius-sm); font-size:.8rem; color:var(--text-light);">
+          <p style="margin-bottom:4px;">✓ Prices in USD. Sales tax calculated at checkout.</p>
+          <p style="margin:0;">✓ All products are OTC eligible and ship from the U.S.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#3B82F6"/><path d="M10 18h16M18 10v16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>TalkyCo</a><p>Quality OTC healthcare products.</p></div><div class="footer-col"><h5>Help</h5><ul class="footer-links"><li><a href="faq.html">FAQ</a></li><li><a href="shipping.html">Shipping</a></li><li><a href="returns.html">Returns</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h5>Legal</h5><ul class="footer-links"><li><a href="terms.html">Terms</a></li><li><a href="privacy-policy.html">Privacy</a></li><li><a href="sms-terms.html">SMS</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div><div class="footer-col"></div></div><div class="footer-bottom"><p>&copy; 2025 TalkyCo LLC. All rights reserved.</p></div></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

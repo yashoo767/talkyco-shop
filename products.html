@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTC Products Catalog — TalkyCo Shop</title>
+  <meta name="description" content="Browse TalkyCo's complete over-the-counter product catalog. Pain relief, allergy, digestive health, first aid, vitamins, and personal care." />
+  <link rel="canonical" href="https://shop.talkyco.com/products" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar">Free shipping on orders over $35 &mdash; <a href="products.html">Shop Now</a></div>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="TalkyCo Shop Home">
+        <svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#1E40AF"/><path d="M10 18h16M18 10v16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+        Talky<span class="logo-accent">Co</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link active">Shop</a>
+        <div class="dropdown">
+          <button class="nav-link" aria-haspopup="true">Categories ▾</button>
+          <div class="dropdown-menu" role="menu">
+            <a href="products.html?cat=pain-relief" class="dropdown-item">Pain Relief</a>
+            <a href="products.html?cat=allergy" class="dropdown-item">Allergy &amp; Cold Care</a>
+            <a href="products.html?cat=digestive" class="dropdown-item">Digestive Health</a>
+            <a href="products.html?cat=first-aid" class="dropdown-item">First Aid</a>
+            <a href="products.html?cat=personal-care" class="dropdown-item">Personal Care</a>
+            <a href="products.html?cat=vitamins" class="dropdown-item">Vitamins &amp; Wellness</a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="btn btn-ghost btn-sm">Account</a>
+        <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          Cart <span class="cart-count" style="display:none">0</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="products.html" class="mobile-nav-link">Shop All Products</a>
+  <div class="mobile-nav-section">Categories</div>
+  <a href="products.html?cat=pain-relief" class="mobile-nav-link">Pain Relief</a>
+  <a href="products.html?cat=allergy" class="mobile-nav-link">Allergy &amp; Cold Care</a>
+  <a href="products.html?cat=digestive" class="mobile-nav-link">Digestive Health</a>
+  <a href="products.html?cat=first-aid" class="mobile-nav-link">First Aid</a>
+  <a href="products.html?cat=personal-care" class="mobile-nav-link">Personal Care</a>
+  <a href="products.html?cat=vitamins" class="mobile-nav-link">Vitamins &amp; Wellness</a>
+  <div class="mobile-nav-section">Information</div>
+  <a href="about.html" class="mobile-nav-link">About TalkyCo</a>
+  <a href="faq.html" class="mobile-nav-link">FAQ</a>
+  <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">/</span>
+      <span>Products</span>
+    </nav>
+    <h1>OTC Product Catalog</h1>
+    <p>Browse our complete selection of over-the-counter healthcare products. All products are OTC eligible.</p>
+  </div>
+</div>
+
+<main>
+  <div class="section">
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar" role="search" aria-label="Product filters">
+        <div class="filter-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="product-search" placeholder="Search products..." aria-label="Search products" oninput="filterProducts()" />
+        </div>
+        <div class="filter-group">
+          <label for="cat-filter">Category:</label>
+          <select id="cat-filter" class="filter-select" onchange="filterProducts()" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="pain-relief">Pain Relief</option>
+            <option value="allergy">Allergy &amp; Cold</option>
+            <option value="digestive">Digestive Health</option>
+            <option value="first-aid">First Aid</option>
+            <option value="personal-care">Personal Care</option>
+            <option value="vitamins">Vitamins &amp; Wellness</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sort-filter">Sort:</label>
+          <select id="sort-filter" class="filter-select" aria-label="Sort products">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Name A–Z</option>
+          </select>
+        </div>
+        <span class="results-count" id="results-count">Showing 12 products</span>
+      </div>
+
+      <!-- Category Pills -->
+      <div style="display:flex; gap:10px; margin-bottom:28px; flex-wrap:wrap;">
+        <button class="faq-cat-btn active" onclick="setCategory('all',this)">All Products</button>
+        <button class="faq-cat-btn" onclick="setCategory('pain-relief',this)">Pain Relief</button>
+        <button class="faq-cat-btn" onclick="setCategory('allergy',this)">Allergy &amp; Cold</button>
+        <button class="faq-cat-btn" onclick="setCategory('digestive',this)">Digestive Health</button>
+        <button class="faq-cat-btn" onclick="setCategory('first-aid',this)">First Aid</button>
+        <button class="faq-cat-btn" onclick="setCategory('personal-care',this)">Personal Care</button>
+        <button class="faq-cat-btn" onclick="setCategory('vitamins',this)">Vitamins &amp; Wellness</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="product-grid">
+
+        <article class="product-card" data-cat="pain-relief" data-name="ibuprofen 200mg tablets" data-price="8.99">
+          <div class="product-image"><span aria-hidden="true">💊</span><span class="product-badge new">Popular</span></div>
+          <div class="product-body">
+            <div class="product-category">Pain Relief</div>
+            <h3 class="product-name">Ibuprofen 200mg Tablets</h3>
+            <p class="product-desc">Fast-acting NSAID for temporary relief of minor aches, pain, and fever. 100-count coated tablets.</p>
+            <div class="product-footer"><div class="product-price">$8.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/ibuprofen-200mg.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="ibupro-200" data-name="Ibuprofen 200mg Tablets" data-price="8.99" data-emoji="💊">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="pain-relief" data-name="acetaminophen 500mg caplets" data-price="9.49">
+          <div class="product-image"><span aria-hidden="true">💊</span><span class="product-badge">Best Seller</span></div>
+          <div class="product-body">
+            <div class="product-category">Pain Relief</div>
+            <h3 class="product-name">Acetaminophen 500mg Caplets</h3>
+            <p class="product-desc">Extra-strength acetaminophen for pain and fever. Gentle on stomach. 100-count.</p>
+            <div class="product-footer"><div class="product-price">$9.49</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/acetaminophen-500mg.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="aceta-500" data-name="Acetaminophen 500mg Caplets" data-price="9.49" data-emoji="💊">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="pain-relief" data-name="naproxen sodium 220mg" data-price="10.99">
+          <div class="product-image"><span aria-hidden="true">💊</span></div>
+          <div class="product-body">
+            <div class="product-category">Pain Relief</div>
+            <h3 class="product-name">Naproxen Sodium 220mg Tablets</h3>
+            <p class="product-desc">All-day pain and fever relief. Lasts up to 12 hours per dose. 100-count tablets.</p>
+            <div class="product-footer"><div class="product-price">$10.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/naproxen-sodium-220mg.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="napro-220" data-name="Naproxen Sodium 220mg Tablets" data-price="10.99" data-emoji="💊">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="allergy" data-name="loratadine 10mg tablets" data-price="11.99">
+          <div class="product-image"><span aria-hidden="true">🤧</span></div>
+          <div class="product-body">
+            <div class="product-category">Allergy &amp; Cold</div>
+            <h3 class="product-name">Loratadine 10mg Tablets</h3>
+            <p class="product-desc">Non-drowsy 24-hour allergy relief. Relieves sneezing, runny nose, and itchy eyes. 30-count.</p>
+            <div class="product-footer"><div class="product-price">$11.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/loratadine-10mg.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="lorat-10" data-name="Loratadine 10mg Tablets" data-price="11.99" data-emoji="🤧">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="allergy" data-name="cetirizine hcl 10mg tablets" data-price="14.49">
+          <div class="product-image"><span aria-hidden="true">🤧</span></div>
+          <div class="product-body">
+            <div class="product-category">Allergy &amp; Cold</div>
+            <h3 class="product-name">Cetirizine HCl 10mg Tablets</h3>
+            <p class="product-desc">24-hour relief for indoor/outdoor allergies. Non-drowsy formula. 45-count.</p>
+            <div class="product-footer"><div class="product-price">$14.49</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/cetirizine-10mg.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="ceti-10" data-name="Cetirizine HCl 10mg Tablets" data-price="14.49" data-emoji="🤧">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="digestive" data-name="omeprazole 20mg capsules" data-price="19.99">
+          <div class="product-image"><span aria-hidden="true">🫁</span></div>
+          <div class="product-body">
+            <div class="product-category">Digestive Health</div>
+            <h3 class="product-name">Omeprazole 20mg Capsules</h3>
+            <p class="product-desc">OTC proton pump inhibitor for frequent heartburn. 24-hour treatment. 42-count.</p>
+            <div class="product-footer"><div class="product-price">$19.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/omeprazole-20mg.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="omep-20" data-name="Omeprazole 20mg Capsules" data-price="19.99" data-emoji="🫁">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="digestive" data-name="calcium antacid tablets" data-price="7.99">
+          <div class="product-image"><span aria-hidden="true">🫁</span></div>
+          <div class="product-body">
+            <div class="product-category">Digestive Health</div>
+            <h3 class="product-name">Calcium Antacid Tablets</h3>
+            <p class="product-desc">Fast-acting antacid for heartburn, acid indigestion, and upset stomach. Assorted flavors. 150-count.</p>
+            <div class="product-footer"><div class="product-price">$7.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/calcium-antacid.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="calc-antacid" data-name="Calcium Antacid Tablets" data-price="7.99" data-emoji="🫁">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="first-aid" data-name="bacitracin first aid ointment" data-price="6.49">
+          <div class="product-image"><span aria-hidden="true">🩺</span><span class="product-badge new">New</span></div>
+          <div class="product-body">
+            <div class="product-category">First Aid</div>
+            <h3 class="product-name">Bacitracin First Aid Ointment</h3>
+            <p class="product-desc">Helps prevent infection in minor cuts, scrapes, and burns. Triple antibiotic formula. 1 oz tube.</p>
+            <div class="product-footer"><div class="product-price">$6.49</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/bacitracin-ointment.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="baci-oint" data-name="Bacitracin First Aid Ointment" data-price="6.49" data-emoji="🩺">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="first-aid" data-name="adhesive bandages variety pack" data-price="8.29">
+          <div class="product-image"><span aria-hidden="true">🩹</span></div>
+          <div class="product-body">
+            <div class="product-category">First Aid</div>
+            <h3 class="product-name">Adhesive Bandages Variety Pack</h3>
+            <p class="product-desc">Flexible fabric bandages in assorted sizes for minor cuts and scrapes. Sterile, latex-free. 100-count.</p>
+            <div class="product-footer"><div class="product-price">$8.29</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/adhesive-bandages.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="band-variety" data-name="Adhesive Bandages Variety Pack" data-price="8.29" data-emoji="🩹">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="vitamins" data-name="vitamin d3 calcium complex" data-price="13.99">
+          <div class="product-image"><span aria-hidden="true">🌿</span><span class="product-badge sale">Sale</span></div>
+          <div class="product-body">
+            <div class="product-category">Vitamins &amp; Wellness</div>
+            <h3 class="product-name">Vitamin D3 + Calcium Complex</h3>
+            <p class="product-desc">Supports bone health and immune function. 1000 IU Vitamin D3 with Calcium Carbonate. 120-count.</p>
+            <div class="product-footer"><div class="product-price"><span class="original">$16.99</span>$13.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/vitamin-d3-calcium.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="vitd3-calc" data-name="Vitamin D3 + Calcium Complex" data-price="13.99" data-emoji="🌿">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="vitamins" data-name="complete daily multivitamin" data-price="15.99">
+          <div class="product-image"><span aria-hidden="true">🌿</span></div>
+          <div class="product-body">
+            <div class="product-category">Vitamins &amp; Wellness</div>
+            <h3 class="product-name">Complete Daily Multivitamin</h3>
+            <p class="product-desc">Comprehensive daily supplement with 23 essential vitamins and minerals. For adults 18+. 90-count.</p>
+            <div class="product-footer"><div class="product-price">$15.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/complete-multivitamin.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="multi-daily" data-name="Complete Daily Multivitamin" data-price="15.99" data-emoji="🌿">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" data-cat="personal-care" data-name="hydrocortisone 1% cream" data-price="9.99">
+          <div class="product-image"><span aria-hidden="true">🧴</span></div>
+          <div class="product-body">
+            <div class="product-category">Personal Care</div>
+            <h3 class="product-name">Hydrocortisone 1% Cream</h3>
+            <p class="product-desc">Temporarily relieves minor skin irritations, itching, and rashes from eczema, insect bites, and contact dermatitis. 1 oz tube.</p>
+            <div class="product-footer"><div class="product-price">$9.99</div></div>
+          </div>
+          <div class="product-actions">
+            <a href="products/hydrocortisone-cream.html" class="view-product-btn">View Product</a>
+            <button class="add-to-cart-btn" data-id="hydro-cream" data-name="Hydrocortisone 1% Cream" data-price="9.99" data-emoji="🧴">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+      </div><!-- /#product-grid -->
+
+      <!-- No results -->
+      <div id="no-results" style="display:none; text-align:center; padding:48px; background:#fff; border:1px solid var(--border); border-radius:var(--radius-md);">
+        <div style="font-size:3rem; margin-bottom:12px;">🔍</div>
+        <h3>No products found</h3>
+        <p style="color:var(--text-light);">Try adjusting your search or category filter.</p>
+        <button onclick="resetFilters()" class="btn btn-primary" style="margin-top:16px;">Show All Products</button>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#3B82F6"/><path d="M10 18h16M18 10v16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>TalkyCo</a>
+        <p>Quality over-the-counter healthcare products delivered to your door.</p>
+        <div class="footer-sms-notice">SMS Program: Up to 4 msg/month. Msg &amp; data rates may apply. Reply STOP to unsubscribe. <a href="sms-terms.html">SMS Terms</a> | <a href="privacy-policy.html">Privacy Policy</a></div>
+      </div>
+      <div class="footer-col"><h5>Shop</h5><ul class="footer-links"><li><a href="products.html">All Products</a></li><li><a href="products.html?cat=pain-relief">Pain Relief</a></li><li><a href="products.html?cat=allergy">Allergy &amp; Cold</a></li><li><a href="products.html?cat=digestive">Digestive Health</a></li><li><a href="products.html?cat=first-aid">First Aid</a></li><li><a href="products.html?cat=vitamins">Vitamins</a></li></ul></div>
+      <div class="footer-col"><h5>Help</h5><ul class="footer-links"><li><a href="faq.html">FAQ</a></li><li><a href="shipping.html">Shipping Policy</a></li><li><a href="returns.html">Returns &amp; Refunds</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul class="footer-links"><li><a href="terms.html">Terms &amp; Conditions</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="sms-terms.html">SMS Program</a></li><li><a href="sms-consent.html">SMS Opt-In</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 TalkyCo LLC. All rights reserved. All products are OTC eligible.</p>
+      <div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy-policy.html">Privacy</a><a href="sms-terms.html">SMS</a><a href="disclaimer.html">Disclaimer</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function filterProducts() {
+  const search = document.getElementById('product-search').value.toLowerCase();
+  const cat = document.getElementById('cat-filter').value;
+  const cards = document.querySelectorAll('#product-grid .product-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const matchCat = cat === 'all' || card.dataset.cat === cat;
+    const matchSearch = !search || card.dataset.name.includes(search);
+    const show = matchCat && matchSearch;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('results-count').textContent = `Showing ${visible} product${visible !== 1 ? 's' : ''}`;
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+}
+function setCategory(cat, btn) {
+  document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('cat-filter').value = cat;
+  filterProducts();
+}
+function resetFilters() {
+  document.getElementById('product-search').value = '';
+  document.getElementById('cat-filter').value = 'all';
+  document.querySelectorAll('.faq-cat-btn').forEach((b,i) => b.classList.toggle('active', i===0));
+  filterProducts();
+}
+// Read URL param on load
+const urlCat = new URLSearchParams(location.search).get('cat');
+if (urlCat) {
+  document.getElementById('cat-filter').value = urlCat;
+  document.querySelectorAll('.faq-cat-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.toLowerCase().includes(urlCat.replace('-',' ')) || (urlCat==='all' && b.textContent==='All Products'));
+  });
+  filterProducts();
+}
+</script>
+</body>
+</html>

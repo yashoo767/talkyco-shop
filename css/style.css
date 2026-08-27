@@ -211,8 +211,10 @@ strong { font-weight: 600; color: var(--text-dark); }
 .checkbox-text { font-size: .82rem; color: rgba(255,255,255,.8); line-height: 1.5; }
 .sms-disclosures { font-size: .75rem; color: rgba(255,255,255,.55); line-height: 1.6; margin-top: 12px; }
 .sms-disclosures a { color: rgba(255,255,255,.7); text-decoration: underline; }
-.sms-success { display: none; background: rgba(5,150,105,.15); border: 1px solid rgba(5,150,105,.3); border-radius: var(--radius-sm); padding: 16px; text-align: center; color: rgba(255,255,255,.9); font-size: .9rem; }
+.sms-success { display: none; background: #ECFDF5; border: 2px solid #059669; border-radius: var(--radius-sm); padding: 20px; text-align: center; color: #064E3B; font-size: .9rem; line-height: 1.6; }
 .sms-success.show { display: block; }
+.sms-success strong { color: #047857; }
+.sms-success a { color: #059669; text-decoration: underline; }
 
 /* ===== FOOTER ===== */
 .site-footer { background: var(--text-dark); color: rgba(255,255,255,.75); padding: 64px 0 32px; }

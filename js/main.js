@@ -265,20 +265,15 @@ function handleSmsSubmit(e) {
   const phone = form.querySelector('input[type="tel"]')?.value;
   const consent = form.querySelector('input[type="checkbox"]')?.checked;
 
-  if (!phone) {
+  if (!phone || phone.trim() === '') {
     showToast('Please enter your phone number.', 'error');
-    return;
-  }
-
-  if (!consent) {
-    showToast('Please check the consent box to subscribe to SMS marketing.', 'error');
     return;
   }
 
   // Record consent data (in production, POST to backend)
   const consentRecord = {
     phone_number: phone,
-    consent_status: true,
+    consent_status: consent,
     consent_timestamp: new Date().toISOString(),
     consent_source: 'website_form',
     consent_page_url: window.location.href,
@@ -291,14 +286,23 @@ function handleSmsSubmit(e) {
   // Show success
   const successEl = form.closest('.sms-form-card, .modal-body, .sms-consent-body')?.querySelector('.sms-success');
   if (successEl) {
+    // Update success message based on consent
+    const msgEl = successEl.querySelector('.sms-success-message');
+    if (msgEl) {
+      if (consent) {
+        msgEl.innerHTML = 'You have successfully opted in to TalkyCo marketing text messages.<br><br>Message frequency may vary. Message and data rates may apply.<br>Reply STOP to unsubscribe or HELP for assistance.';
+      } else {
+        msgEl.innerHTML = 'Your information has been submitted. You have not been enrolled in marketing text messages.<br><br>You can opt in at any time by visiting our <a href="sms-consent.html">SMS opt-in page</a>.';
+      }
+    }
     form.style.display = 'none';
     successEl.classList.add('show');
-    const subscribedMsg = successEl.querySelector('.sms-success-subscribed');
-    const noConsentMsg = successEl.querySelector('.sms-success-no-consent');
-    if (subscribedMsg) subscribedMsg.style.display = 'inline';
-    if (noConsentMsg) noConsentMsg.style.display = 'none';
   } else {
-    showToast('You\'re subscribed! Watch for TalkyCo offers.', 'success');
+    if (consent) {
+      showToast('You\'re subscribed! Watch for TalkyCo offers.', 'success');
+    } else {
+      showToast('Thank you. Your information has been submitted.', 'success');
+    }
     closeSmsModal();
   }
 }

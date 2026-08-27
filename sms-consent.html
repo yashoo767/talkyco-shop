@@ -55,7 +55,7 @@
             </div>
 
             <div style="font-size:.82rem; color:var(--text-medium); line-height:1.65; margin-bottom:16px; padding:12px; background:var(--bg-light); border-radius:var(--radius-sm);">
-              <p style="margin-bottom:6px;"><strong>Consent to receive marketing text messages is not a condition of purchase.</strong> You can shop TalkyCo without signing up for text messages.</p>
+              <p style="margin-bottom:6px;"><strong>Marketing text message consent is optional and is not required to make a purchase or use TalkyCo services.</strong> You can shop TalkyCo without signing up for text messages.</p>
               <p style="margin:0;">By checking the box and submitting my mobile number, I agree to receive recurring marketing text messages from TalkyCo as described above.</p>
             </div>
 
@@ -63,14 +63,21 @@
               <a href="terms.html" style="color:var(--primary);">Terms of Service</a> | <a href="sms-terms.html" style="color:var(--primary);">SMS Terms</a> | <a href="privacy-policy.html" style="color:var(--primary);">Privacy Policy</a>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-full btn-lg">Yes, sign me up!</button>
+            <button type="submit" class="btn btn-primary btn-full btn-lg">Continue</button>
           </form>
 
           <div class="sms-success" style="margin-top:16px;">
-            <strong style="color:var(--secondary-dark);">You have successfully opted in to TalkyCo marketing text messages.</strong><br><br>
-            Message frequency may vary concerning eligible OTC products, promotions, discounts, special offers, new products, and product availability.<br><br>
-            <strong>Message and data rates may apply.</strong><br><br>
-            Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for assistance.
+            <strong style="color:var(--secondary-dark);">Thank you!</strong><br><br>
+            <span class="sms-success-subscribed" style="display:none;">
+              You have successfully opted in to TalkyCo marketing text messages.<br><br>
+              Message frequency may vary concerning eligible OTC products, promotions, discounts, special offers, new products, and product availability.<br><br>
+              <strong>Message and data rates may apply.</strong><br><br>
+              Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for assistance.
+            </span>
+            <span class="sms-success-no-consent" style="display:none;">
+              Your information has been submitted. You have not been enrolled in marketing text messages.<br><br>
+              You can opt in at any time by returning to this page and checking the consent checkbox.
+            </span>
           </div>
 
           <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border); text-align:center;">

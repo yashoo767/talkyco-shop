@@ -265,12 +265,11 @@ function handleSmsSubmit(e) {
   const phone = form.querySelector('input[type="tel"]')?.value;
   const consent = form.querySelector('input[type="checkbox"]')?.checked;
   if (!phone) { showToast('Please enter your phone number.', 'error'); return; }
-  if (!consent) { showToast('Please check the consent box to subscribe.', 'error'); return; }
 
   // Record consent data (in production, POST to backend)
   const consentRecord = {
     phone_number: phone,
-    consent_status: true,
+    consent_status: consent,
     consent_timestamp: new Date().toISOString(),
     consent_source: 'website_form',
     consent_page_url: window.location.href,
@@ -285,8 +284,22 @@ function handleSmsSubmit(e) {
   if (successEl) {
     form.style.display = 'none';
     successEl.classList.add('show');
+    // Show appropriate success message based on consent
+    const subscribedMsg = successEl.querySelector('.sms-success-subscribed');
+    const noConsentMsg = successEl.querySelector('.sms-success-no-consent');
+    if (consent && subscribedMsg) {
+      subscribedMsg.style.display = 'inline';
+      if (noConsentMsg) noConsentMsg.style.display = 'none';
+    } else if (!consent && noConsentMsg) {
+      noConsentMsg.style.display = 'inline';
+      if (subscribedMsg) subscribedMsg.style.display = 'none';
+    }
   } else {
-    showToast('You\'re subscribed! Watch for TalkyCo offers.', 'success');
+    if (consent) {
+      showToast('You\'re subscribed! Watch for TalkyCo offers.', 'success');
+    } else {
+      showToast('Thank you. Your information has been submitted.', 'success');
+    }
     closeSmsModal();
   }
 }
